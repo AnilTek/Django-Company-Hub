@@ -95,7 +95,6 @@ python manage.py runserver
 ├── 📂 media  
 ├── 📜 manage.py               # Django management tool
 ├── 📜 requirements.txt        # Dependencies list
-└── 📜 README.md               # Project documentation
 ```
 
 ---
