@@ -111,3 +111,5 @@ python manage.py makemessages -l new_language_code
 ```bash
 python manage.py compilemessages
 ```
+
+![Image](https://github.com/user-attachments/assets/7fae54e4-1e30-4d5b-aa4f-7224d91a3a9b)
