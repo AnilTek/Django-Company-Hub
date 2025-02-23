@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<body>
+    <div class="auth">
+        <div class="card">
+            <div class="auth__header text-center">               
+                {% for service in services %}
+                <form method="POST" action="{% url 'new_service' company.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn--main--outline" value="{{ service.id }}" name="service">
+                        {{ service }}
+                    </button>
+                </form>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<style>
+    .auth__header {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 30px; 
+        justify-content: center; 
+        margin-top: 20px; 
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    button {
+        padding: 15px 20px; 
+        font-size: 1.2em; 
+        border-radius: 15px; 
+        background-color: rgb(180, 56, 56); 
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.2s, background-color 0.3s;
+    }
+    
+    button:hover {
+        background-color: rgb(226, 116, 116); 
+        transform: translateY(-3px); 
+    }
+    
+
+
+</style>
+
+
+
+
+
+
+{% endblock content %}
+
+
+
+
+

@@ -1,0 +1,7 @@
+{% autoescape off %}
+Hi {{user.username}},
+
+Please click on this link below to hire the {{user.username}} :
+
+http://{{ domain }}{% url 'hire_confirm' uidb64=uid token=token %}
+{% endautoescape %}

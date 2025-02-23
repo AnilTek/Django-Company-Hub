@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block content %}
+
+
+<body>
+    <div class="auth">
+       
+        
+        <div class="card">
+            {% if is_file_uploaded %}
+            <object data="{{ file_path }}#page=1&toolbar=0" type="application/pdf" width="500px" height="500px">
+                PDF cannot be displayed. <a href="{{ file_path }}">Download PDF</a>
+            </object>
+            {% endif %}
+            <div class="auth__header text-center" style="color: rgb(97,26,57);">
+                <h2>Upload {{ document.document }}</h2>
+                <form  href="" method="post" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                    <label for="uploaded_file">{% trans "Select File" %}:</label>
+                    <input type="file" name="uploaded_file" id="uploaded_file" >
+                    <button type="submit" class="btn btn-primary">{% trans "Upload" %}</button>
+                    <button name="action" value="clear" type="submit" class="btn btn-primary">{% trans "Clear" %}</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+
+{% endblock content %}
+
+

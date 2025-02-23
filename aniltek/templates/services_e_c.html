@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="auth">
+    <form method="POST" action="{% url 'new_service' company.id %}">
+        {% csrf_token %}
+        <button type="submit" class="new-button">{% trans "New" %}</button>
+    </form>
+    
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>{% trans "Company" %} </th>
+                    <th>{% trans "Employee" %}</th>
+                    <th>{% trans "Service" %}</th>
+                    <th>{% trans "Status" %}</th>
+                    <th>{% trans "Date Created" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for service in services %}
+                {% if service.status == 'created' %}
+                <tr>
+                    <td>{{ service.company|upper }}</td>
+                    <td>{{ service.employee}}</td>
+                    <td>{{ service.service}}</td>
+                    <td>{{ service.status|upper }}</td>
+                    <td>{{service.date_created}}</td>
+                    <td><form method="POST" action="{% url 'edit_service' service.id%}" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn--main--outline">{% trans "Edit" %} </button>
+                    </form></td>
+                    <td><form method="POST" action="{% url 'edit_service' service.id%}" style="display: inline;">
+                        {% csrf_token %}
+                        <button name="action" value="delete" type="submit" class="btn btn--main--outline">{% trans "Delete" %}</button>
+                    </form></td>
+                    
+                </tr>
+                {% endif %}
+            </tbody>
+           
+            
+            {% endfor %}
+        </table>
+        
+    </div>
+</div>
+<style>
+   
+    .auth {
+        position: relative;
+        padding: 20px;
+    }
+
+   
+    .new-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: white;
+        color: rgb(97,26,57);
+        border: none;
+        padding: 15px 20px; 
+        border-radius: 8px; 
+        cursor: pointer;
+        font-size: 16px; 
+        font-weight: bold; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    }
+
+    .new-button:hover {
+        color: white;
+        background-color:rgb(97,26,57);
+    }
+
+    /* Tablo Stilleri */
+    .table-container {
+        color: rgb(97,26,57);
+        margin-top: 50px;
+        overflow-x: auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+    }
+
+    thead {
+        background-color: white;
+        
+    }
+
+    th, td {
+        padding: 30px;
+        border: 1px solid #ddd;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+</style>
+
+{% endblock content %}

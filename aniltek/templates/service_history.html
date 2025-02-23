@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="auth">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>{% trans "Company" %} </th>
+                    <th>{% trans "Employee" %}</th>
+                    <th>{% trans "Service" %}</th>
+                    <th>{% trans "Status" %}</th>
+                    <th>{% trans "Date Pending" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for service in services %}
+                {% if service.status == 'pending' %}
+                <tr>
+                    <td>{{ service.company|upper }}</td>
+                    <td>{{ service.employee}}</td>
+                    <td>{{ service.service}}</td>
+                    <td>{{ service.status|upper }}</td>
+                    <td>{{service.date_submitted}}</td>
+                </tr>
+                {% endif %}
+            </tbody>
+           
+            
+            {% endfor %}
+        </table>
+        
+    </div>
+</div>
+<style>
+    
+    .auth {
+        position: relative;
+        padding: 20px;
+    }
+
+   
+    .new-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 15px 20px; 
+        border-radius: 8px; 
+        cursor: pointer;
+        font-size: 16px; 
+        font-weight: bold; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .new-button:hover {
+        background-color: #45a049;
+    }
+
+    
+    .table-container {
+        margin-top: 50px;
+        overflow-x: auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 2px;
+    }
+
+    table {
+        color: rgb(97, 26, 57);
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 18px; 
+    }
+
+    thead {
+        background-color: white;
+        
+    }
+
+    th, td {
+        padding: 30px;
+        border: 1px solid #ddd;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+</style>
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+Django>=5.1.1
+
+# Django Extensions
+
+djangorestframework
+django-cors-headers
+django-environ
+
+# Server & Database
+gunicorn
+psycopg2-binary 
+
+# File Processing
+pillow  
+openpyxl  
+PyPDF2  
+
+# Web & Automation
+selenium  
+requests  

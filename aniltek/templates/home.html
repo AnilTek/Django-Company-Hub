@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="auth">
+<div class="mumble-block__preview">
+
+</div>
+</div>
+
+<style>
+    .dropdown-wrapper {
+        position: relative; 
+        text-align: center; 
+        padding: 3px;
+    }
+
+    
+    .dropdown {
+        display: none;
+    }
+
+    
+    .for-dropdown {
+        display: block;
+        background-color: white;
+        color: rgb(99, 23, 49);
+        padding: 12px 60px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+        text-align: left;
+    }
+
+    .for-dropdown:hover {
+        background-color: grey;
+    }
+
+    
+    .section-dropdown {
+        display: none; 
+        position: absolute; 
+        top: 100%; 
+        left: 0;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 300px; 
+        z-index: 1000;
+    }
+
+    
+    .dropdown:checked ~ .for-dropdown + .section-dropdown {
+        display: block; 
+    }
+
+    
+    .section-dropdown a {
+        display: block;
+        padding: 8px;
+        color: #333;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .section-dropdown a:hover {
+        background-color: #f0f0f0;
+    }
+</style>
+
+
+
+{% endblock content %}
+

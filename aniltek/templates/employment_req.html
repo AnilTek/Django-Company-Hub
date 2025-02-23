@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="auth">
+    <div class="card">
+
+<form action="{% url 'send_emp_request'%}" method='POST' class="form auth__form">
+    {% csrf_token %}
+    <div class="form__field">
+        <label for="formInput#text">{% trans "Username" %}: </label>
+        <input class="input input--text" id="formInput#text" type="text" name="username"
+          placeholder="Enter company username..." />
+      </div>
+      <div class="auth__actions">
+        <input class="btn btn--sub btn--lg" type="submit" value="{% trans 'Send Request' %}" />
+        
+      </div>
+</form>
+</div>
+
+</div>
+
+
+{% endblock content %}

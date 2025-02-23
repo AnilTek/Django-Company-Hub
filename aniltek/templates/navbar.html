@@ -1,0 +1,152 @@
+{% load static %}
+{% load i18n %}
+
+<!-- Header Section -->
+<header class="header">
+    <div class="container container--narrow">
+        <a href="{% url 'home' %}"class="header__logo">
+            {% if request.user.is_authenticated %}
+            <strong><p  style="color:white;">{{request.user.username|upper}} - {{company_name}}</p></strong>
+            {% else %}
+            {% endif %}
+        </a>
+        {% if request.user.is_authenticated %}
+        {% if request.path == "/tr/home/" or request.path == "/en/home/" %}
+
+        <div class="dropdown-wrapper">
+            <input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
+            <label class="for-dropdown" for="dropdown">{% trans "Select Company" %}<i class="uil uil-arrow-down"></i></label>
+            <div class="section-dropdown"> 
+                <form method="POST" action="{% url 'set_company' %}">
+                    {% csrf_token %}
+                    {% for comp in object %}
+                        {% if comp.status == 'approved' %}
+                        <button type="submit" name="company_id" value="{{ comp.company.id }}" class="btn btn--main--outline">
+                            {{ comp.company }}
+                        </button>
+                        {% endif %}
+                    {% endfor %}
+                </form>
+            </div>
+        </div>
+        {% endif %}
+    {% else %}
+    {% endif %}
+    
+        
+        <nav class="header__nav">
+            <input type="checkbox" id="responsive-menu" />
+            <label for="responsive-menu" class="toggle-menu">
+                <span>Menu</span>
+                <div class="toggle-menu__lines"></div>
+            </label>
+            <ul class="header__menu">
+
+
+                <li class="header__menuItem"><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+
+                {% if request.user.is_authenticated %}
+                
+                    {% if request.user.first_name == 'Company' %}
+                    <li class="header__menuItem"><a href="{% url 'hire_request_company' %}">{% trans "Hire" %}</a></li>
+                    <li class="header__menuItem"><a href="{% url 'service_dashboard' %}">{% trans "Services Dashboard" %}</a></li>
+                    <li class="header__menuItem"><a href="{% url 'emp_man_dashboard' %}">{% trans "Manage Employees" %}</a></li>
+                    <li class="header__menuItem"><a href="{% url 'service_history' %}">{% trans "Service History" %}</a></li>
+
+                    {% elif request.user.first_name == 'Employee' %}
+                    <li class="header__menuItem"><a href="{% url 'job_offers' %}">{% trans "Job Requests" %}</a></li>
+                    <li class="header__menuItem"><a href="{% url 'send_emp_request' %}">{% trans "Employment Request" %}</a></li>
+                    <li class="header__menuItem"><a href="{% url 'services_e_company' %}">{% trans "Services" %}</a></li>
+                    <li class="header__menuItem"><a href="{% url 'service_history' %}">{% trans "Services History" %}</a></li>
+                    {% endif %}
+                <li class="header__menuItem"><a href="{% url 'logout'%}" class="btn btn--sub">{% trans "Logout" %}</a></li>
+                {% else %}
+                <li class="header__menuItem"><a href="{% url 'login'%}" class="btn btn--sub">{% trans "Login/Sign Up" %}</a></li>
+                {% endif %}
+                
+
+                
+
+                
+                
+                
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #1f2029; 
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      
+    .dropdown-wrapper {
+        z-index: 999; 
+        display: flex;
+        align-items: center; 
+        gap: 2px; 
+    }
+    
+    
+    .dropdown {
+        display: none;
+    }
+    
+    
+    .for-dropdown {
+        display: block;
+        background-color:white;
+        color: rgb(99,23,49);
+        padding: 1px 1px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+        text-align: left;
+    }
+    
+    .for-dropdown:hover {
+        background-color:grey;
+    }
+    
+    
+    .section-dropdown {
+        display: none;
+        top: 40px; 
+        left: 0;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        width: 100px;
+        z-index: 1000;
+    }
+    
+    
+    .dropdown:checked ~ .for-dropdown + .section-dropdown {
+        display: block;
+    }
+    
+   
+    .section-dropdown a {
+        display: block;
+        padding: 8px;
+        color: black ;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .section-dropdown a:hover {
+        background-color: black ;
+    }
+      
+      
+
+</style>

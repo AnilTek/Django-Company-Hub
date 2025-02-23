@@ -1,0 +1,368 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-09 04:19+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\aniltek\settings.py:24
+msgid "English"
+msgstr "İngilizce"
+
+#: .\aniltek\settings.py:25
+msgid "Turkish"
+msgstr "Türkçe"
+
+#: .\aniltek\settings.py:26
+msgid "French"
+msgstr "Fransızca"
+
+#: .\aniltek\settings.py:27
+msgid "German"
+msgstr "Almanca"
+
+#: .\aniltek\settings.py:28
+msgid "Japanese"
+msgstr "Japonca"
+
+#: .\tek\views.py:41
+msgid "This feature is only usable for companies"
+msgstr "Bu özellik sadece şirket hesapları içindir"
+
+#: .\tek\views.py:56
+msgid "link invalid or expired !"
+msgstr "Link geçersiz veya tarihi geçmiş"
+
+#: .\tek\views.py:74
+msgid "Employement request successfully sended !"
+msgstr "İş isteği başarıyla gönderildi!"
+
+#: .\tek\views.py:76
+msgid "an error occured while sending email !"
+msgstr "E-posta gönderiminde bir hata oluştu!"
+
+#: .\tek\views.py:83
+msgid "This feature is only usable for employees !"
+msgstr "Bu özellik yalnızca çalışan hesapları için kullanılabilir!"
+
+#: .\tek\views.py:90
+msgid "required a company username !"
+msgstr "Şirket kullanıcı adı gerekli!"
+
+#: .\tek\views.py:97
+msgid "{company_username} named company does not exists !"
+msgstr "{company_username} adlı şirket mevcut değil!"
+
+#: .\tek\views.py:106
+msgid "user not an employee instance"
+msgstr "Kullanıcı bir çalışan örneği değil"
+
+#: .\tek\views.py:111
+msgid "Job request sended successfully via E-mail"
+msgstr "İş talebi e-posta yoluyla başarıyla gönderildi"
+
+#: .\tek\views.py:180 .\tek\views.py:267
+msgid "Accessible only for companies ! "
+msgstr "Bu özellik yalnızca şirketler için erişilebilir!"
+
+#: .\tek\views.py:193
+msgid "{employee_name} user already got the request."
+msgstr "{employee_name} kullanıcısına zaten istek gönderildi."
+
+#: .\tek\views.py:201
+msgid "{employee_username} Job Request sended !"
+msgstr "{employee_username} iş talebi gönderildi!"
+
+#: .\tek\views.py:206
+msgid "{employee_username} User not found"
+msgstr "{employee_username} kullanıcısı bulunamadı"
+
+#: .\tek\views.py:243
+msgid "{company_name} s offer accepted ! "
+msgstr "{company_name} adlı teklif kabul edildi!"
+
+#: .\tek\views.py:259
+msgid "{company_name} s offer rejected ! "
+msgstr "{company_name} adlı teklif reddedildi!"
+
+#: .\tek\views.py:273
+msgid "{employee_name} s employment ended "
+msgstr "{employee_name} adlı çalışanın iş ilişkisi sona erdi."
+
+#: .\tek\views.py:296 .\tek\views.py:432 .\tek\views.py:494
+msgid "Accessible only for employees!"
+msgstr "Bu özellik yalnızca çalışanlar için erişilebilir!"
+
+#: .\tek\views.py:302
+msgid "Please select a company !"
+msgstr "Lütfen bir şirket seçin!"
+
+#: .\tek\views.py:370
+msgid "Service Deleted !"
+msgstr "Hizmet Silindi!"
+
+#: .\tek\views.py:407
+msgid "Service Saved !"
+msgstr "Hizmet Kaydedildi!"
+
+#: .\tek\views.py:446
+msgid "{field_name} successfully cleared!"
+msgstr "{field_name} başarıyla temizlendi!"
+
+#: .\tek\views.py:449
+msgid "No file to clear for {field_name}."
+msgstr "{field_name} için temizlenecek dosya yok."
+
+#: .\tek\views.py:461
+msgid "{field_name} successfully uploaded!"
+msgstr "{field_name} başarıyla yüklendi!"
+
+#: .\tek\views.py:467
+msgid "Invalid file or field name!"
+msgstr "Geçersiz dosya veya alan adı!"
+
+#: .\tek\views.py:518
+msgid "New service request for {selected_service} has been created!"
+msgstr "{selected_service} için yeni hizmet talebi oluşturuldu!"
+
+#: .\templates\edit_service.html:35
+msgid "Send"
+msgstr "Gönder"
+
+#: .\templates\emp_man_dashboard.html:17
+msgid "End"
+msgstr "Sonlandır"
+
+#: .\templates\employment_req.html:11 .\templates\hire_request_company.html:11
+#: .\templates\login.html:26
+msgid "Username"
+msgstr "Kullanıcı Adı"
+
+#: .\templates\employment_req.html:16
+msgid "Send Request"
+msgstr "İstek Gönder"
+
+#: .\templates\hire_request_company.html:16 .\templates\navbar.html:51
+msgid "Hire"
+msgstr "İşe Al"
+
+#: .\templates\job_offer_employee.html:9
+msgid "Job Offers"
+msgstr "İş Teklifleri"
+
+#: .\templates\job_offer_employee.html:22
+msgid "Accept"
+msgstr "Kabul Et"
+
+#: .\templates\job_offer_employee.html:28
+msgid "Decline"
+msgstr "Reddet"
+
+#: .\templates\job_offer_employee.html:36
+msgid "There isnt any job offers"
+msgstr "Henüz bir iş teklifi yok"
+
+#: .\templates\login.html:19
+msgid "Hello, Welcome Back!"
+msgstr "Merhaba, Tekrar Hoş Geldin!"
+
+#: .\templates\login.html:33 .\templates\new_password.html:24
+msgid "Password"
+msgstr "Şifre"
+
+#: .\templates\login.html:39 .\templates\new_password.html:17
+#: .\templates\reset_password.html:17
+msgid "Reset Password"
+msgstr "Şifreyi Sıfırla"
+
+#: .\templates\login.html:44
+msgid "Dont have an account"
+msgstr "Bir hesabın yok mu?"
+
+#: .\templates\login.html:45
+msgid "Sign Up"
+msgstr "Kayıt Ol"
+
+#: .\templates\navbar.html:18
+msgid "Select Company"
+msgstr "Şirket Seç"
+
+#: .\templates\navbar.html:46
+msgid "Home"
+msgstr "Ana Sayfa"
+
+#: .\templates\navbar.html:52
+msgid "Services Dashboard"
+msgstr "Hizmet Paneli"
+
+#: .\templates\navbar.html:53
+msgid "Manage Employees"
+msgstr "Çalışanları Yönet"
+
+#: .\templates\navbar.html:54
+msgid "Service History"
+msgstr "Hizmet Geçmişi"
+
+#: .\templates\navbar.html:57
+msgid "Job Requests"
+msgstr "İş Talepleri"
+
+#: .\templates\navbar.html:58
+msgid "Employment Request"
+msgstr "Çalışan Talebi"
+
+#: .\templates\navbar.html:59
+msgid "Services"
+msgstr "Hizmetler"
+
+#: .\templates\navbar.html:60
+msgid "Services History"
+msgstr "Hizmet Geçmişi"
+
+#: .\templates\navbar.html:62
+msgid "Logout"
+msgstr "Çıkış Yap"
+
+#: .\templates\navbar.html:64
+msgid "Login/Sign Up"
+msgstr "Giriş/Kayıt Ol"
+
+#: .\templates\new_password.html:29
+msgid "Confirm Password"
+msgstr "Şifreyi Onayla"
+
+#: .\templates\register.html:13
+msgid "Register an Account"
+msgstr "Hesap Oluştur"
+
+#: .\templates\register.html:14
+msgid "Create a new developer account"
+msgstr "Yeni bir geliştirici hesabı oluştur"
+
+#: .\templates\register.html:42
+msgid "Already have an Account"
+msgstr "Zaten bir hesabım var"
+
+#: .\templates\register.html:43
+msgid "Log In"
+msgstr "Giriş Yap"
+
+#: .\templates\reset_password.html:24
+msgid "Email"
+msgstr "E-posta"
+
+#: .\templates\service_dashboard.html:14 .\templates\service_history.html:11
+#: .\templates\services_e_c.html:17
+msgid "Employee"
+msgstr "Çalışan"
+
+#: .\templates\service_dashboard.html:15 .\templates\service_history.html:12
+#: .\templates\services_e_c.html:18
+msgid "Service"
+msgstr "Hizmet"
+
+#: .\templates\service_dashboard.html:16 .\templates\service_history.html:13
+#: .\templates\services_e_c.html:19
+msgid "Status"
+msgstr "Durum"
+
+#: .\templates\service_dashboard.html:17 .\templates\services_e_c.html:20
+msgid "Date Created"
+msgstr "Oluşturulma Tarihi"
+
+#: .\templates\service_dashboard.html:32 .\templates\services_e_c.html:38
+msgid "Delete"
+msgstr "Sil"
+
+#: .\templates\service_history.html:14
+msgid "Date Pending"
+msgstr "Bekleme Tarihi"
+
+#: .\templates\services_e_c.html:8
+msgid "New"
+msgstr "Yeni"
+
+#: .\templates\services_e_c.html:34
+msgid "Edit"
+msgstr "Düzenle"
+
+#: .\templates\upload_document.html:21
+msgid "Select File"
+msgstr "Dosya Seç"
+
+#: .\templates\upload_document.html:23
+msgid "Upload"
+msgstr "Yükle"
+
+#: .\templates\upload_document.html:24
+msgid "Clear"
+msgstr "Temizle"
+
+#: .\users\views.py:36
+msgid "Thank you for your email confirmation. Now you can login your account."
+msgstr "E-posta doğrulamanız için teşekkür ederiz. Artık hesabınıza giriş yapabilirsiniz."
+
+#: .\users\views.py:39 .\users\views.py:60
+msgid "Activation link is invalid!"
+msgstr "Aktivasyon bağlantısı geçersiz!"
+
+#: .\users\views.py:56
+msgid "Thank you for your email confirmation. Now you can change your password."
+msgstr "E-posta doğrulamanız için teşekkür ederiz. Artık şifrenizi değiştirebilirsiniz."
+
+#: .\users\views.py:69
+msgid "User not found."
+msgstr "Kullanıcı bulunamadı."
+
+#: .\users\views.py:81
+msgid "Password changed successfully. You can now log in."
+msgstr "Şifreniz başarıyla değiştirildi. Artık giriş yapabilirsiniz."
+
+#: .\users\views.py:84
+msgid "Passwords do not match. Please try again."
+msgstr "Şifreler uyuşmuyor. Lütfen tekrar deneyin."
+
+#: .\users\views.py:103
+msgid "Dear {user}, please go to your email {to_email} inbox and click on received link to reset your password. Note: Check your spam folder."
+msgstr "Sayın {user}, lütfen {to_email} adresinize gönderilen bağlantıya tıklayarak şifrenizi sıfırlayın. Not: Spam klasörünüzü kontrol edin."
+
+#: .\users\views.py:121
+msgid "Dear {user}, please go to your email {to_email} inbox and click on received activation link to confirm and complete the registration. Note: Check your spam folder."
+msgstr "Sayın {user}, lütfen {to_email} adresinize gönderilen aktivasyon bağlantısına tıklayarak kaydınızı tamamlayın. Not: Spam klasörünüzü kontrol edin."
+
+#: .\users\views.py:139
+msgid "No account is associated with this email address."
+msgstr "Bu e-posta adresiyle ilişkili bir hesap yok."
+
+#: .\users\views.py:158
+msgid "User does not exist !"
+msgstr "Kullanıcı mevcut değil!"
+
+#: .\users\views.py:167
+msgid "Username OR password is incorrect"
+msgstr "Kullanıcı adı veya şifre hatalı."
+
+#: .\users\views.py:183
+msgid "User account was created! Please check your email to verify your account."
+msgstr "Kullanıcı hesabı oluşturuldu! Lütfen hesabınızı doğrulamak için e-postanızı kontrol edin."
+
+#: .\users\views.py:190
+msgid "An error has occurred during registration"
+msgstr "Kayıt sırasında bir hata oluştu."
+
+#: .\users\views.py:199
+msgid "User was logged out !"
+msgstr "Kullanıcı çıkış yaptı!"

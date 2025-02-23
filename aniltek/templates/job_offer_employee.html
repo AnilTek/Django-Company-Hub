@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="auth">
+
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; color: red;">
+    <h2 style="font-size: 2rem; color: white; margin-bottom: 30px; text-align: center;">{% trans "Job Offers"%}</h2>
+
+    {% if job_offers %}
+        <div style="width: 100%; max-width: 700px;">
+            {% for offer in job_offers %}
+                <div style="background-color: white ; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+                    <p style="margin: 10px 0; font-size: 16px; color: rgb(97,26,57);"><strong style="color: rgb(97,26,57);">{% trans "Company"%}:</strong> {{ offer.company|upper }}</p>
+
+                    {% if offer.status == "pending" %}
+                        <div style="margin-top: 15px;">
+                            <!-- Kabul Et Formu -->
+                            <form method="POST" action="{% url 'accept_offer' offer.id %}" style="display: inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn--main--outline">{% trans "Accept"%}</button>
+                            </form>
+
+                            <!-- Reddet Formu -->
+                            <form method="POST" action="{% url 'reject_offer' offer.id %}" style="display: inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn--sub--outline">{% trans "Decline"%}</button>
+                            </form>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p style="text-align: center; font-size: 16px; color: #555;">{% trans "There isnt any job offers"%}.</p>
+    {% endif %}
+</div>
+</div>
+
+{% endblock content %}
