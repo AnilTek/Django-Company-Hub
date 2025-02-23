@@ -113,3 +113,5 @@ python manage.py compilemessages
 ```
 
 ![Image](https://github.com/user-attachments/assets/7fae54e4-1e30-4d5b-aa4f-7224d91a3a9b)
+
+![Image](https://github.com/user-attachments/assets/2afee85a-f6c7-450d-8fe4-798699e02151)
